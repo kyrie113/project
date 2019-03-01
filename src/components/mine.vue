@@ -30,6 +30,34 @@
     <div class="banner">
         <img src="static/user/timg.jpg" alt="">
     </div>
+    <div class="pannal1">
+      <van-cell-group>
+  <van-cell  title="我的收藏"  icon="like-o"   isLink/>
+  <van-cell title="我的客服" icon="service-o" isLink />
+</van-cell-group>
+    </div>
+    <div class="pannal2">
+      <van-cell-group>
+  <van-cell  title="饿了吗联名卡"  icon="vip-card-o"  isLink>  
+     <!-- <template slot="icon">
+        <van-icon  name="like-o" color="red"/>
+      </template>  slot 拓展标签 -->
+  <van-tag  round type="danger">new</van-tag>
+  免费领百元红包</van-cell>
+  <van-cell title="推荐有奖" icon="gift-o"  value=" 10元现金拿不停"isLink />
+  <van-cell title="金币商城" icon="bag-o"   value=" 0元好物品在这里"isLink />
+  <van-cell title="三小时公益" icon="award-o" isLink > <van-tag  round type="danger">hot</van-tag>
+  我的三小时我做主</van-cell>
+  <van-cell title="签到领红包" icon="balance-pay" isLink ><van-tag  round type="danger">new</van-tag>
+  领10元红包</van-cell>
+  <van-cell title="城市代理申请" icon="hotel-o" isLink ><van-tag  round type="danger">new</van-tag>
+  最高6个月免抽佣</van-cell>
+  <van-cell title="免费流量" icon="cluster-o"  value='每月最高500m'isLink />
+  <van-cell title="企业订餐" icon="logistics" isLink />
+  <van-cell title="企业订餐" icon="logistics" isLink />
+
+</van-cell-group>
+    </div>
 </van-pull-refresh>
 
     </div>
@@ -38,6 +66,7 @@
 export default {
   data() {
     return {
+      show: false,
       count: 0,
       isLoading: false,
     }
@@ -50,6 +79,9 @@ export default {
         this.isLoading = false;
         this.count++;
       }, 500);
+    },
+    change(){
+      this.show=!this.show;
     }
   }
 }
@@ -109,6 +141,10 @@ export default {
 }
 .banner{
   height: 100px;
+  overflow: hidden;
+}
+.pannal2{
+  margin-top:20px;
 }
 
 </style>
